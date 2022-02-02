@@ -1,0 +1,90 @@
+{
+  "name": "admin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "env-cmd -f .env.local react-scripts start",
+    "build": "env-cmd -f .env.production react-scripts build",
+    "format:check": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:check": "eslint --fix --max-warnings 0 'src/**/*.{js,jsx,ts,tsx}'",
+    "prepare": "husky install",
+    "update-i18n": "node update-i18n.js"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^29.1.0",
+    "@ckeditor/ckeditor5-react": "^3.0.2",
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "@material-ui/core": "^5.0.0-beta.3",
+    "@material-ui/icons": "^5.0.0-beta.1",
+    "@material-ui/lab": "^5.0.0-alpha.42",
+    "@material-ui/styles": "^5.0.0-beta.3",
+    "@reduxjs/toolkit": "^1.5.1",
+    "@types/date-fns": "^2.6.0",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@types/react-router-dom": "^5.1.7",
+    "ckeditor5-custom-build": "git+https://github.com/khurshidatajiev/ckeditor-custom-build.git",
+    "clsx": "^1.1.1",
+    "commitlint": "^12.1.1",
+    "date-fns": "^2.23.0",
+    "env-cmd": "^10.1.0",
+    "formik": "^2.2.9",
+    "google-spreadsheet": "^3.1.15",
+    "history": "^5.0.0",
+    "husky": "^6.0.0",
+    "i18next": "^20.2.1",
+    "i18next-browser-languagedetector": "^6.1.0",
+    "i18next-http-backend": "^1.2.1",
+    "lint-staged": "^10.5.4",
+    "moment": "^2.29.1",
+    "prettier": "^2.2.1",
+    "query-string": "^7.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-i18next": "^11.8.13",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3",
+    "typescript": "^4.2.4",
+    "yup": "^0.32.9"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,css,scss}": [
+      "prettier --write"
+    ],
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix --max-warnings 0"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "@types/ramda": "^0.27.44",
+    "@types/react-helmet": "^6.1.2",
+    "ramda": "^0.27.1"
+  }
+}

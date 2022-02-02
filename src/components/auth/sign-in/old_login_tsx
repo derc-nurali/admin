@@ -1,0 +1,28 @@
+import { ComponentType } from 'react';
+import useStyles from './styles';
+import { Button } from '@material-ui/core';
+import { toUrlWithSearchParams } from '../../common/utils/fetch-utils';
+
+export const Login: ComponentType<{}> = () => {
+  const url = toUrlWithSearchParams(
+    'http://sso.egov.uz:8443/sso/oauth/Authorization.do',
+    {
+      response_type: 'one_code',
+      client_id: 'single_reester',
+      redirect_uri: window.location.href,
+      scope: 'myportal',
+      state: 'testState',
+    }
+  );
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <h3>login page</h3>
+      <div className={classes.loginOneId}>
+        <Button href={url} variant={'contained'} color={'primary'}>
+          Войти через ONE ID
+        </Button>
+      </div>
+    </div>
+  );
+};
